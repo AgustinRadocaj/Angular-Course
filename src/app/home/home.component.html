@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="column gap-1">
+    <div class="row wrap gap-1 space-between">
+        @for(product of products; track product){
+            <app-product [product]="product" (productOutput)="onProductOutput($event)"></app-product>
+        }
+    </div>
+
+    <p-paginator
+    [rows]="rows"
+    [totalRecords]="totalRecords"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    (onPageChange)="onPageChange($event)"
+    ></p-paginator>
+</div>
